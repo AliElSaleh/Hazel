@@ -8,7 +8,13 @@ namespace Hazel
 	{
 	public:
 		Application();
+		Application(const Application &); // Copy Constructor
+		Application(Application &&); // Move Constructor
 		virtual ~Application();
+
+		// Operator overloads
+		Application &operator= (const Application& OtherApp); // Copy Assignment
+		Application &operator= (Application&& OtherApp); // Move Assignment
 
 		void Run();
 	};
